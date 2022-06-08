@@ -95,15 +95,36 @@ func TestNewOk(t *testing.T){
 
 }
 
+func TestRowsOk(t *testing.T) {
+	//var input Matrix
+	//m1, _ := New("123 456 78 225")
+	str3 := "123 456 78"
+	//strconv.Itoa(input)
+	matrix, _ := New(str3)
+	mtrx := matrix.Rows()
+	if mtrx == nil {
+		t.Errorf("Output doesn't correct")
+	}
+}
+
+func TestColsOk(t *testing.T) {
+	str4 := "123 456 78"
+	matrix1, _ := New(str4)
+	mtrx1 := matrix1.Cols()
+	if mtrx1 == nil {
+		t.Errorf("Output also doesn't correct")
+	}
+
+}
+
 func TestSetOk(t *testing.T){
 	str5 := "123 456 78"
 	matrix2, _ := New(str5)
 	//mtrx2 := matrix2.Rows()
     //mtrx3 := matrix2.Cols()
 	if matrix2.rows < 0 {
-		t.Errorf("Output doesn't correct2")
+		t.Errorf("Invalid matrix")
 	}
 
 }
-
 
