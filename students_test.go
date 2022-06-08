@@ -90,7 +90,7 @@ func TestNewOk(t *testing.T){
 	}
 	_, ok := strconv.Atoi(str2)
 	if ok != nil {
-		t.Errorf("Swap doesn't work")
+		t.Errorf("input is not good, shouldn't be letter")
 	}
 
 }
