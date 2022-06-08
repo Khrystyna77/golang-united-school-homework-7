@@ -1,8 +1,12 @@
 package coverage
 
 import (
-	"testing"
 	"os"
+	"testing"
+	//"errors"
+	//"fmt"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -71,6 +75,35 @@ func TestSwOk(t *testing.T){
 			t.Errorf("Swap doesn't work")
 
 		}
+}
+
+////////////////////////////////////////////////////////
+///newMatrix
+func TestNewOk(t *testing.T){
+	//str1 := "abcd efghij klmnop"
+	str2 := "123 456 78"
+	//var matrix Matrix
+    New(str2)
+    str2 = strings.ReplaceAll(str2, " ", "")
+	if len(str2) == 0{
+		t.Errorf("Don't find data")
+	}
+	_, ok := strconv.Atoi(str2)
+	if ok != nil {
+		t.Errorf("Swap doesn't work")
+	}
+
+}
+
+func TestSetOk(t *testing.T){
+	str5 := "123 456 78"
+	matrix2, _ := New(str5)
+	//mtrx2 := matrix2.Rows()
+    //mtrx3 := matrix2.Cols()
+	if matrix2.rows < 0 {
+		t.Errorf("Output doesn't correct2")
+	}
+
 }
 
 
